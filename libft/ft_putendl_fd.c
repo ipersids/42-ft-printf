@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 19:21:13 by ipersids          #+#    #+#             */
-/*   Updated: 2024/10/30 14:48:00 by ipersids         ###   ########.fr       */
+/*   Updated: 2024/11/13 15:32:06 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,14 @@
  * @param s The string to output.
  * @param fd The file descriptor to which the string and newline are written.
  */
-void	ft_putendl_fd(char *s, int fd)
+size_t	ft_putendl_fd(char *s, int fd)
 {
+	size_t	len;
+
 	if (!s || fd < 0)
-		return ;
+		return (0);
+	len = ft_strlen(s);
 	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);
+	return (++len);
 }

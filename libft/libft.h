@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 11:28:38 by ipersids          #+#    #+#             */
-/*   Updated: 2024/10/30 14:54:10 by ipersids         ###   ########.fr       */
+/*   Updated: 2024/11/13 15:32:14 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,10 @@ int		ft_tolower(int ch);
 
 /* ------------------------ Other Utility Functions ------------------------ */
 
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
+size_t	ft_putchar_fd(char c, int fd);
+size_t	ft_putstr_fd(char *s, int fd);
+size_t	ft_putendl_fd(char *s, int fd);
+size_t	ft_putnbr_fd(int n, int fd);
 
 /* ------------------------- Linked List Functions ------------------------- */
 
