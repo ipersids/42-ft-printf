@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 23:33:28 by ipersids          #+#    #+#             */
-/*   Updated: 2024/11/14 10:16:18 by ipersids         ###   ########.fr       */
+/*   Updated: 2024/11/14 12:48:03 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,9 @@ static const char	*print_content(va_list *args, const char *f, size_t *len)
 	if (*f == 'u')
 		*len += ft_putunbr_fd(va_arg(*args, unsigned int), 1);
 	if (*f == 'x' || *f == 'X')
-		*len += ft_puthex_fd(va_arg(*args, int), 1, *f == 'X');
+		*len += ft_puthex_fd(va_arg(*args, long long int), 1, *f == 'X');
 	if (*f == 'p')
-		*len += ft_putptr_fd(va_arg(*args, unsigned int), 1);
+		*len += ft_putptr_fd((unsigned long long)va_arg(*args, void *), 1);
 	else if (*f == '%' || *f == '\0')
 		*len += ft_putchar_fd('%', 1);
 	if (*f == '\0')
