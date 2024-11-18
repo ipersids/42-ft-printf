@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 18:59:42 by ipersids          #+#    #+#             */
-/*   Updated: 2024/10/30 14:43:33 by ipersids         ###   ########.fr       */
+/*   Created: 2024/10/28 19:20:03 by ipersids          #+#    #+#             */
+/*   Updated: 2024/11/18 11:50:50 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 /**
- * @brief Place n zero-valued bytes in the area pointed to by s.
+ * @brief Outputs a character to the specified file descriptor.
  * 
- * LEGACY: Because the memset() function is preferred over bzero function, 
- * this replica simply reuse ft_memset(s, '\0', n) inside.
+ * This function writes the character `c` to the given file descriptor `fd`.
  * 
- * ! If `s` point to null, the result is a segmentation error.
+ * @param c The character to output.
+ * @param fd The file descriptor to which the character is written.
  * 
- * @param s pointer to the memory block.
- * @param n numbers of bytes to be written
+ * @return size_t Number of characters that are written.
  */
-void	ft_bzero(void *s, size_t n)
+size_t	ft_putchar_fd(char c, int fd)
 {
-	ft_memset(s, '\0', n);
+	if (fd < 0)
+		return (0);
+	write(fd, &c, 1);
+	return (1);
 }

@@ -6,16 +6,15 @@
 #    By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/13 23:09:38 by ipersids          #+#    #+#              #
-#    Updated: 2024/11/14 00:06:47 by ipersids         ###   ########.fr        #
+#    Updated: 2024/11/18 11:56:04 by ipersids         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Compilation variables
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
-HDRS		= -I$(LIBFT_DIR) -I.
 AR 			= ar
-ARFLAGS 	= -rvcs
+ARFLAGS 	= -rcs
 
 # Platform-specific settings
 ifeq ($(OS),Windows_NT)
@@ -30,21 +29,17 @@ endif
 
 # File names
 NAME		:= libftprintf$(LIB_EXT)
-SRCS		:= ft_printf.c ft_puthex_fd.c ft_putptr_fd.c ft_putunmb_fd.c
+SRCS		:= ft_printf.c ft_puthex_fd.c ft_putptr_fd.c ft_putunmb_fd.c \
+			   ft_putstr_fd.c ft_putnbr_fd.c ft_putchar_fd.c ft_strchr.c \
+			   ft_strlen.c
 OBJ			:= $(SRCS:%.c=%.o)
-LIBFT_DIR	:= ./libft
-LIBFT		:= $(LIBFT_DIR)/libft$(LIB_EXT)
 
 # Targets
-all: $(LIBFT) $(NAME)
-
-# Compile libft by calling its Makefile
-$(LIBFT):
-	@$(MAKE) -C $(LIBFT_DIR)
+all: $(NAME)
 
 # Create the libftprintf library
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ) ./libft/*.o
+	$(AR) $(ARFLAGS) $(NAME) $(OBJ)
 	@echo "\nLibrary $(NAME) created.\n"
 
 # Compile object files
@@ -55,13 +50,11 @@ $(NAME): $(OBJ)
 # Clean object files
 clean:
 	@$(RM) -f $(OBJ)
-	@$(MAKE) -C $(LIBFT_DIR) clean
 	@echo "Cleaned up $(NAME) object files."
 
 # Remove all compiled files
 fclean: clean
 	@$(RM) -f $(NAME)
-	@$(MAKE) -C $(LIBFT_DIR) fclean
 	@echo "Cleaned up $(NAME) executable files."
 
 # Rebuild everything

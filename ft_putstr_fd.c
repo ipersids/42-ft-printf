@@ -6,11 +6,11 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 19:20:36 by ipersids          #+#    #+#             */
-/*   Updated: 2024/11/14 11:51:11 by ipersids         ###   ########.fr       */
+/*   Updated: 2024/11/18 11:51:01 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 /**
  * @brief Outputs a string to the specified file descriptor.

@@ -6,11 +6,11 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 18:51:21 by ipersids          #+#    #+#             */
-/*   Updated: 2024/11/01 18:07:19 by ipersids         ###   ########.fr       */
+/*   Updated: 2024/11/18 11:53:26 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 /**
  * @brief Returns the length of the C string str.
