@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 19:21:53 by ipersids          #+#    #+#             */
-/*   Updated: 2024/11/18 11:50:55 by ipersids         ###   ########.fr       */
+/*   Updated: 2024/12/04 22:40:18 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ size_t	ft_putnbr_fd(int n, int fd)
 	size_t	len;
 
 	len = 0;
-	if (fd < 0)
-		return (0);
 	ch = '0';
 	if (n < 0)
 	{

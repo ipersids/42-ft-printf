@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 16:55:24 by ipersids          #+#    #+#             */
-/*   Updated: 2024/11/14 12:51:56 by ipersids         ###   ########.fr       */
+/*   Updated: 2024/12/04 22:39:39 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ size_t	ft_puthex_fd(unsigned int n, int fd, short int is_uppercase)
 	char	*base;
 	size_t	len;
 
-	if (fd < 0)
-		return (0);
 	if (is_uppercase)
 		base = "0123456789ABCDEF";
 	else

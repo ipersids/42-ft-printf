@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 19:20:03 by ipersids          #+#    #+#             */
-/*   Updated: 2024/11/18 11:50:50 by ipersids         ###   ########.fr       */
+/*   Updated: 2024/12/04 22:36:38 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,5 @@
  */
 size_t	ft_putchar_fd(char c, int fd)
 {
-	if (fd < 0)
-		return (0);
-	write(fd, &c, 1);
-	return (1);
+	return (write(fd, &c, 1));
 }
